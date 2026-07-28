@@ -55,10 +55,10 @@ def load_base_data(uploaded_file=None):
                 os.remove(tmp_path)
             return None, pd.DataFrame(), {}
     else:
-        if not os.path.exists(INPUT_JSON):
-            st.warning(f"Sistemde `{INPUT_JSON}` bulunamadı, lütfen Excel dosyası yükleyin.")
+        if not os.path.exists(BASE_DATA):
+            st.warning(f"Sistemde `{BASE_DATA}` bulunamadı, lütfen Excel dosyası yükleyin.")
             return None, pd.DataFrame(), {}
-        with open(INPUT_JSON, 'r', encoding='utf-8') as f:
+        with open(BASE_DATA, 'r', encoding='utf-8') as f:
             data = json.load(f)
         
     units = data.get("units", [])
