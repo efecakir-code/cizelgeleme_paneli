@@ -107,7 +107,7 @@ def main():
     hga.save_checkpoint(out_dir,solution,context,status='FIFO_VALIDATED',phase='FIFO ortak başlangıç',
         started=time.monotonic(),total_seconds=0,generation=0,cp_round=0,
         validation='INDEPENDENT_CONSTRAINT_VALIDATION_PASS',neighborhood='YOK — yalnız FIFO dispatch',
-        relaxed_operations=0,skip_excel=False)
+        relaxed_operations=0,skip_excel=True)
         
     meta={'rule':'O1 Setup Grubu, alt kırılımda release artan; her sipariş ardışık FIFO',
           'optimization_algorithm_used':False,'metaheuristic_used':False,'cp_sat_used':False,
