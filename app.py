@@ -430,7 +430,17 @@ def main():
         import sys
         st.info("FIFO çizelgesi oluşturuluyor...")
         # FIFO betiğini çalıştır
-        subprocess.run([sys.executable, "FIFO_BASLANGIC_OLUSTUR.py", "--input", CUSTOM_INPUT, "--output-dir", FIFO_OUTPUT_DIR], check=True)
+        try:
+            result = subprocess.run(
+                [sys.executable, "FIFO_BASLANGIC_OLUSTUR.py", "--input", CUSTOM_INPUT, "--output-dir", FIFO_OUTPUT_DIR],
+                check=True,
+                capture_output=True,
+                text=True
+            )
+        except subprocess.CalledProcessError as e:
+            st.error(f"FIFO betiği çalışırken bir hata oluştu (Çıkış Kodu {e.returncode})")
+            st.code(e.stderr, language="text")
+            st.stop()
         
         # Sonucu yükle
         fifo_chk_path = os.path.join(FIFO_OUTPUT_DIR, "FIFO_KANIT.json")

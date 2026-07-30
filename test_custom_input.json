@@ -1,0 +1,925 @@
+{
+  "schema_version": 2,
+  "model": "three_stage_lexicographic_fjsp",
+  "scenario_mode": "net_manufacturing_dynamic",
+  "unit_count": 10,
+  "base_date": "2026-07-02T00:00:00",
+  "source_workbook": "/Users/dilek/Desktop/ISBIR_HGA_VNS_TEK_KLASOR/157_alternator_stok_sonrasi_net_ihtiyac.xlsx",
+  "source_sha256": "929065b683470834a65ca0732a4eab918849e6d0f7a4a7c48b97948d39f9601e",
+  "route_template_input": "/Users/dilek/Desktop/ISBIR_HGA_VNS_TEK_KLASOR/data/master_three_stage_input.json",
+  "route_template_sha256": "d1441cf5ce0ffe722672cccf3f4bd1d3f64ca047fa6df8e67201ebb60328fbcc",
+  "time_unit": "0.01 minute",
+  "time_scale": 100,
+  "time_axis": "net_work_minutes",
+  "daily_work_minutes": 540,
+  "planning_start": "2026-07-21",
+  "parameters": {
+    "transport_time": 1500,
+    "epsilon_makespan": 0,
+    "epsilon_tardiness": 0,
+    "time_limit_seconds_per_stage": 3600.0,
+    "priority_weights": {
+      "Acil": 3,
+      "Yüksek": 2,
+      "Normal": 1
+    },
+    "setup_same": {
+      "29": 1500,
+      "30": 2000,
+      "33": 2000,
+      "40": 3000,
+      "43": 3000,
+      "50": 4000,
+      "60": 5000,
+      "66": 5500,
+      "76": 6000,
+      "60300–60800": 6000,
+      "661000–661250": 6000,
+      "761500–762000": 6000
+    },
+    "setup_change_or_initial": {
+      "29": 27000,
+      "30": 30000,
+      "33": 30000,
+      "40": 33000,
+      "43": 33000,
+      "50": 36000,
+      "60": 42000,
+      "66": 48000,
+      "76": 54000,
+      "60300–60800": 42000,
+      "661000–661250": 48000,
+      "761500–762000": 54000
+    }
+  },
+  "machines": [
+    "MP088",
+    "MP090",
+    "MP091",
+    "MP092",
+    "MP093",
+    "MP097",
+    "MP098",
+    "MP099",
+    "MP100",
+    "MP101"
+  ],
+  "units": [
+    {
+      "unit_id": "MOCK-D09D",
+      "order_job_id": "JOB-20-0",
+      "alternator_code": "2.01.10.0001",
+      "model": "40V1.1",
+      "series": "40",
+      "priority": "Yüksek",
+      "priority_weight": 3,
+      "release": 702000,
+      "due": 1836000,
+      "source_excel_row": 30,
+      "ready_date": "2026-07-21",
+      "planned_production_start": "2026-07-13",
+      "planned_ship_date": "2026-08-18",
+      "model_due_date": "2026-08-18",
+      "project": "7563 PTO Alternatör",
+      "stock_confirmation_status": "Stok yok / imalat",
+      "operations": [
+        {
+          "sequence": 1,
+          "operation": "Adaptör İşleme",
+          "setup_group": "40",
+          "machine_durations": {
+            "MP091": 2500,
+            "MP090": 2500
+          }
+        },
+        {
+          "sequence": 2,
+          "operation": "Arka Kapak İşleme",
+          "setup_group": "40",
+          "machine_durations": {
+            "MP091": 6000,
+            "MP090": 6000
+          }
+        },
+        {
+          "sequence": 3,
+          "operation": "Gövde İşleme",
+          "setup_group": "40",
+          "machine_durations": {
+            "MP101": 4500
+          }
+        },
+        {
+          "sequence": 4,
+          "operation": "Mil İşleme",
+          "setup_group": "40",
+          "machine_durations": {
+            "MP091": 13400,
+            "MP090": 13400
+          }
+        },
+        {
+          "sequence": 5,
+          "operation": "İkaz Statoru İşleme",
+          "setup_group": "40",
+          "machine_durations": {
+            "MP091": 500,
+            "MP090": 500
+          }
+        },
+        {
+          "sequence": 6,
+          "operation": "Fan İşleme",
+          "setup_group": "40",
+          "machine_durations": {
+            "MP091": 1000,
+            "MP090": 1000
+          }
+        },
+        {
+          "sequence": 7,
+          "operation": "Fan Kama Yeri Açma",
+          "setup_group": "40",
+          "machine_durations": {
+            "MP092": 500
+          }
+        },
+        {
+          "sequence": 8,
+          "operation": "Tahrik Burcu İşleme",
+          "setup_group": "40",
+          "machine_durations": {
+            "MP091": 2500,
+            "MP090": 2500
+          }
+        },
+        {
+          "sequence": 9,
+          "operation": "Tahrik Burcu Kama Yeri Açma",
+          "setup_group": "40",
+          "machine_durations": {
+            "MP092": 500
+          }
+        }
+      ]
+    },
+    {
+      "unit_id": "MOCK-FE7A",
+      "order_job_id": "JOB-20-1",
+      "alternator_code": "2.01.08.0001",
+      "model": "66600-4T",
+      "series": "66",
+      "priority": "Normal",
+      "priority_weight": 2,
+      "release": 1188000,
+      "due": 2592000,
+      "source_excel_row": 80,
+      "ready_date": "2026-08-03",
+      "planned_production_start": "2026-08-03",
+      "planned_ship_date": "2026-09-07",
+      "model_due_date": "2026-09-07",
+      "project": "Malezya MPMS-2 Çok Amaçlı Görev Gemisi 450 KW",
+      "stock_confirmation_status": "Stok bilgisi boş",
+      "operations": [
+        {
+          "sequence": 1,
+          "operation": "Adaptör İşleme",
+          "setup_group": "66",
+          "machine_durations": {
+            "MP090": 9500
+          }
+        },
+        {
+          "sequence": 2,
+          "operation": "Arka Dış Rulman Kapağı İşleme",
+          "setup_group": "66",
+          "machine_durations": {
+            "MP091": 1500
+          }
+        },
+        {
+          "sequence": 3,
+          "operation": "Arka Kapak İşleme",
+          "setup_group": "66",
+          "machine_durations": {
+            "MP090": 20000
+          }
+        },
+        {
+          "sequence": 4,
+          "operation": "Arka İç Rulman Kapağı İşleme",
+          "setup_group": "66",
+          "machine_durations": {
+            "MP091": 1500
+          }
+        },
+        {
+          "sequence": 5,
+          "operation": "Fan İşleme",
+          "setup_group": "66",
+          "machine_durations": {
+            "MP090": 8000
+          }
+        },
+        {
+          "sequence": 6,
+          "operation": "Tahrik Burcu İşleme",
+          "setup_group": "66",
+          "machine_durations": {
+            "MP091": 3500
+          }
+        }
+      ]
+    },
+    {
+      "unit_id": "MOCK-2C74",
+      "order_job_id": "JOB-20-2",
+      "alternator_code": "2.01.01.0001",
+      "model": "2913-4TM",
+      "series": "29",
+      "priority": "Acil",
+      "priority_weight": 3,
+      "release": 702000,
+      "due": 1026000,
+      "source_excel_row": 18,
+      "ready_date": "2026-07-21",
+      "planned_production_start": "2026-07-13",
+      "planned_ship_date": "2026-07-28",
+      "model_due_date": "2026-07-28",
+      "project": "Jemus 19 İl C Tipi 2x13 KVA 4000 lt - Van",
+      "stock_confirmation_status": "Stok yok / imalat",
+      "operations": [
+        {
+          "sequence": 1,
+          "operation": "Adaptör İşleme",
+          "setup_group": "29",
+          "machine_durations": {
+            "MP091": 2500,
+            "MP090": 2500
+          }
+        },
+        {
+          "sequence": 2,
+          "operation": "Arka Kapak İşleme",
+          "setup_group": "29",
+          "machine_durations": {
+            "MP091": 6000,
+            "MP090": 6000
+          }
+        },
+        {
+          "sequence": 3,
+          "operation": "Gövde İşleme",
+          "setup_group": "29",
+          "machine_durations": {
+            "MP101": 3500
+          }
+        },
+        {
+          "sequence": 4,
+          "operation": "Mil İşleme",
+          "setup_group": "29",
+          "machine_durations": {
+            "MP091": 13400,
+            "MP090": 13400
+          }
+        },
+        {
+          "sequence": 5,
+          "operation": "İkaz Statoru İşleme",
+          "setup_group": "29",
+          "machine_durations": {
+            "MP091": 500,
+            "MP090": 500
+          }
+        },
+        {
+          "sequence": 6,
+          "operation": "Fan İşleme",
+          "setup_group": "29",
+          "machine_durations": {
+            "MP091": 1000,
+            "MP090": 1000
+          }
+        },
+        {
+          "sequence": 7,
+          "operation": "Fan Kama Yeri Açma",
+          "setup_group": "29",
+          "machine_durations": {
+            "MP092": 500
+          }
+        },
+        {
+          "sequence": 8,
+          "operation": "Tahrik Burcu İşleme",
+          "setup_group": "29",
+          "machine_durations": {
+            "MP091": 2500,
+            "MP090": 2500
+          }
+        },
+        {
+          "sequence": 9,
+          "operation": "Tahrik Burcu Kama Yeri Açma",
+          "setup_group": "29",
+          "machine_durations": {
+            "MP092": 500
+          }
+        }
+      ]
+    },
+    {
+      "unit_id": "MOCK-39CE",
+      "order_job_id": "JOB-20-3",
+      "alternator_code": "2.01.08.0001",
+      "model": "66600-4T",
+      "series": "66",
+      "priority": "Yüksek",
+      "priority_weight": 2,
+      "release": 1188000,
+      "due": 2592000,
+      "source_excel_row": 80,
+      "ready_date": "2026-08-03",
+      "planned_production_start": "2026-08-03",
+      "planned_ship_date": "2026-09-07",
+      "model_due_date": "2026-09-07",
+      "project": "Malezya MPMS-2 Çok Amaçlı Görev Gemisi 450 KW",
+      "stock_confirmation_status": "Stok bilgisi boş",
+      "operations": [
+        {
+          "sequence": 1,
+          "operation": "Adaptör İşleme",
+          "setup_group": "66",
+          "machine_durations": {
+            "MP090": 9500
+          }
+        },
+        {
+          "sequence": 2,
+          "operation": "Arka Dış Rulman Kapağı İşleme",
+          "setup_group": "66",
+          "machine_durations": {
+            "MP091": 1500
+          }
+        },
+        {
+          "sequence": 3,
+          "operation": "Arka Kapak İşleme",
+          "setup_group": "66",
+          "machine_durations": {
+            "MP090": 20000
+          }
+        },
+        {
+          "sequence": 4,
+          "operation": "Arka İç Rulman Kapağı İşleme",
+          "setup_group": "66",
+          "machine_durations": {
+            "MP091": 1500
+          }
+        },
+        {
+          "sequence": 5,
+          "operation": "Fan İşleme",
+          "setup_group": "66",
+          "machine_durations": {
+            "MP090": 8000
+          }
+        },
+        {
+          "sequence": 6,
+          "operation": "Tahrik Burcu İşleme",
+          "setup_group": "66",
+          "machine_durations": {
+            "MP091": 3500
+          }
+        }
+      ]
+    },
+    {
+      "unit_id": "MOCK-D448",
+      "order_job_id": "JOB-20-4",
+      "alternator_code": "2.01.03.0007",
+      "model": "3350-4T",
+      "series": "33",
+      "priority": "Yüksek",
+      "priority_weight": 3,
+      "release": 702000,
+      "due": 1566000,
+      "source_excel_row": 19,
+      "ready_date": "2026-07-21",
+      "planned_production_start": "2026-07-13",
+      "planned_ship_date": "2026-08-11",
+      "model_due_date": "2026-08-11",
+      "project": "KA TEİRS-3 Hava Soğutmalı 30 KW GENERATOR 33531 Çöl Beji İngilizce",
+      "stock_confirmation_status": "Stok yok / imalat",
+      "operations": [
+        {
+          "sequence": 1,
+          "operation": "Adaptör İşleme",
+          "setup_group": "33",
+          "machine_durations": {
+            "MP091": 2500,
+            "MP090": 2500
+          }
+        },
+        {
+          "sequence": 2,
+          "operation": "Arka Kapak İşleme",
+          "setup_group": "33",
+          "machine_durations": {
+            "MP091": 6000,
+            "MP090": 6000
+          }
+        },
+        {
+          "sequence": 3,
+          "operation": "Gövde İşleme",
+          "setup_group": "33",
+          "machine_durations": {
+            "MP101": 4500
+          }
+        },
+        {
+          "sequence": 4,
+          "operation": "Mil İşleme",
+          "setup_group": "33",
+          "machine_durations": {
+            "MP091": 13400,
+            "MP090": 13400
+          }
+        },
+        {
+          "sequence": 5,
+          "operation": "İkaz Statoru İşleme",
+          "setup_group": "33",
+          "machine_durations": {
+            "MP091": 500,
+            "MP090": 500
+          }
+        },
+        {
+          "sequence": 6,
+          "operation": "Fan İşleme",
+          "setup_group": "33",
+          "machine_durations": {
+            "MP091": 1000,
+            "MP090": 1000
+          }
+        },
+        {
+          "sequence": 7,
+          "operation": "Fan Kama Yeri Açma",
+          "setup_group": "33",
+          "machine_durations": {
+            "MP092": 500
+          }
+        },
+        {
+          "sequence": 8,
+          "operation": "Tahrik Burcu İşleme",
+          "setup_group": "33",
+          "machine_durations": {
+            "MP091": 2500,
+            "MP090": 2500
+          }
+        },
+        {
+          "sequence": 9,
+          "operation": "Tahrik Burcu Kama Yeri Açma",
+          "setup_group": "33",
+          "machine_durations": {
+            "MP092": 500
+          }
+        }
+      ]
+    },
+    {
+      "unit_id": "MOCK-CF18",
+      "order_job_id": "JOB-20-5",
+      "alternator_code": "2.01.02.0007",
+      "model": "3025-2T",
+      "series": "30",
+      "priority": "Acil",
+      "priority_weight": 3,
+      "release": 702000,
+      "due": 54000,
+      "source_excel_row": 2,
+      "ready_date": "2026-07-21",
+      "planned_production_start": "2026-03-23",
+      "planned_ship_date": "2026-07-02",
+      "model_due_date": "2026-07-02",
+      "project": "Kalkan  20KW 380/50 DUAL TSR MG-0000-2214/01",
+      "stock_confirmation_status": "Stok yok / imalat",
+      "operations": [
+        {
+          "sequence": 1,
+          "operation": "Adaptör İşleme",
+          "setup_group": "30",
+          "machine_durations": {
+            "MP091": 2500,
+            "MP090": 2500
+          }
+        },
+        {
+          "sequence": 2,
+          "operation": "Arka Kapak İşleme",
+          "setup_group": "30",
+          "machine_durations": {
+            "MP091": 6000,
+            "MP090": 6000
+          }
+        },
+        {
+          "sequence": 3,
+          "operation": "İkaz Statoru İşleme",
+          "setup_group": "30",
+          "machine_durations": {
+            "MP091": 500,
+            "MP090": 500
+          }
+        },
+        {
+          "sequence": 4,
+          "operation": "Fan İşleme",
+          "setup_group": "30",
+          "machine_durations": {
+            "MP091": 1000,
+            "MP090": 1000
+          }
+        },
+        {
+          "sequence": 5,
+          "operation": "Fan Kama Yeri Açma",
+          "setup_group": "30",
+          "machine_durations": {
+            "MP092": 500
+          }
+        },
+        {
+          "sequence": 6,
+          "operation": "Tahrik Burcu İşleme",
+          "setup_group": "30",
+          "machine_durations": {
+            "MP091": 2500,
+            "MP090": 2500
+          }
+        },
+        {
+          "sequence": 7,
+          "operation": "Tahrik Burcu Kama Yeri Açma",
+          "setup_group": "30",
+          "machine_durations": {
+            "MP092": 500
+          }
+        }
+      ]
+    },
+    {
+      "unit_id": "MOCK-3C90",
+      "order_job_id": "JOB-20-6",
+      "alternator_code": "2.01.10.0001",
+      "model": "40V1.1",
+      "series": "40",
+      "priority": "Acil",
+      "priority_weight": 3,
+      "release": 702000,
+      "due": 1836000,
+      "source_excel_row": 30,
+      "ready_date": "2026-07-21",
+      "planned_production_start": "2026-07-13",
+      "planned_ship_date": "2026-08-18",
+      "model_due_date": "2026-08-18",
+      "project": "7563 PTO Alternatör",
+      "stock_confirmation_status": "Stok yok / imalat",
+      "operations": [
+        {
+          "sequence": 1,
+          "operation": "Adaptör İşleme",
+          "setup_group": "40",
+          "machine_durations": {
+            "MP091": 2500,
+            "MP090": 2500
+          }
+        },
+        {
+          "sequence": 2,
+          "operation": "Arka Kapak İşleme",
+          "setup_group": "40",
+          "machine_durations": {
+            "MP091": 6000,
+            "MP090": 6000
+          }
+        },
+        {
+          "sequence": 3,
+          "operation": "Gövde İşleme",
+          "setup_group": "40",
+          "machine_durations": {
+            "MP101": 4500
+          }
+        },
+        {
+          "sequence": 4,
+          "operation": "Mil İşleme",
+          "setup_group": "40",
+          "machine_durations": {
+            "MP091": 13400,
+            "MP090": 13400
+          }
+        },
+        {
+          "sequence": 5,
+          "operation": "İkaz Statoru İşleme",
+          "setup_group": "40",
+          "machine_durations": {
+            "MP091": 500,
+            "MP090": 500
+          }
+        },
+        {
+          "sequence": 6,
+          "operation": "Fan İşleme",
+          "setup_group": "40",
+          "machine_durations": {
+            "MP091": 1000,
+            "MP090": 1000
+          }
+        },
+        {
+          "sequence": 7,
+          "operation": "Fan Kama Yeri Açma",
+          "setup_group": "40",
+          "machine_durations": {
+            "MP092": 500
+          }
+        },
+        {
+          "sequence": 8,
+          "operation": "Tahrik Burcu İşleme",
+          "setup_group": "40",
+          "machine_durations": {
+            "MP091": 2500,
+            "MP090": 2500
+          }
+        },
+        {
+          "sequence": 9,
+          "operation": "Tahrik Burcu Kama Yeri Açma",
+          "setup_group": "40",
+          "machine_durations": {
+            "MP092": 500
+          }
+        }
+      ]
+    },
+    {
+      "unit_id": "MOCK-5F11",
+      "order_job_id": "JOB-20-7",
+      "alternator_code": "2.01.08.0001",
+      "model": "66600-4T",
+      "series": "66",
+      "priority": "Acil",
+      "priority_weight": 2,
+      "release": 1188000,
+      "due": 2592000,
+      "source_excel_row": 80,
+      "ready_date": "2026-08-03",
+      "planned_production_start": "2026-08-03",
+      "planned_ship_date": "2026-09-07",
+      "model_due_date": "2026-09-07",
+      "project": "Malezya MPMS-2 Çok Amaçlı Görev Gemisi 450 KW",
+      "stock_confirmation_status": "Stok bilgisi boş",
+      "operations": [
+        {
+          "sequence": 1,
+          "operation": "Adaptör İşleme",
+          "setup_group": "66",
+          "machine_durations": {
+            "MP090": 9500
+          }
+        },
+        {
+          "sequence": 2,
+          "operation": "Arka Dış Rulman Kapağı İşleme",
+          "setup_group": "66",
+          "machine_durations": {
+            "MP091": 1500
+          }
+        },
+        {
+          "sequence": 3,
+          "operation": "Arka Kapak İşleme",
+          "setup_group": "66",
+          "machine_durations": {
+            "MP090": 20000
+          }
+        },
+        {
+          "sequence": 4,
+          "operation": "Arka İç Rulman Kapağı İşleme",
+          "setup_group": "66",
+          "machine_durations": {
+            "MP091": 1500
+          }
+        },
+        {
+          "sequence": 5,
+          "operation": "Fan İşleme",
+          "setup_group": "66",
+          "machine_durations": {
+            "MP090": 8000
+          }
+        },
+        {
+          "sequence": 6,
+          "operation": "Tahrik Burcu İşleme",
+          "setup_group": "66",
+          "machine_durations": {
+            "MP091": 3500
+          }
+        }
+      ]
+    },
+    {
+      "unit_id": "MOCK-FF5C",
+      "order_job_id": "JOB-20-8",
+      "alternator_code": "2.01.02.0007",
+      "model": "3025-2T",
+      "series": "30",
+      "priority": "Acil",
+      "priority_weight": 3,
+      "release": 702000,
+      "due": 54000,
+      "source_excel_row": 2,
+      "ready_date": "2026-07-21",
+      "planned_production_start": "2026-03-23",
+      "planned_ship_date": "2026-07-02",
+      "model_due_date": "2026-07-02",
+      "project": "Kalkan  20KW 380/50 DUAL TSR MG-0000-2214/01",
+      "stock_confirmation_status": "Stok yok / imalat",
+      "operations": [
+        {
+          "sequence": 1,
+          "operation": "Adaptör İşleme",
+          "setup_group": "30",
+          "machine_durations": {
+            "MP091": 2500,
+            "MP090": 2500
+          }
+        },
+        {
+          "sequence": 2,
+          "operation": "Arka Kapak İşleme",
+          "setup_group": "30",
+          "machine_durations": {
+            "MP091": 6000,
+            "MP090": 6000
+          }
+        },
+        {
+          "sequence": 3,
+          "operation": "İkaz Statoru İşleme",
+          "setup_group": "30",
+          "machine_durations": {
+            "MP091": 500,
+            "MP090": 500
+          }
+        },
+        {
+          "sequence": 4,
+          "operation": "Fan İşleme",
+          "setup_group": "30",
+          "machine_durations": {
+            "MP091": 1000,
+            "MP090": 1000
+          }
+        },
+        {
+          "sequence": 5,
+          "operation": "Fan Kama Yeri Açma",
+          "setup_group": "30",
+          "machine_durations": {
+            "MP092": 500
+          }
+        },
+        {
+          "sequence": 6,
+          "operation": "Tahrik Burcu İşleme",
+          "setup_group": "30",
+          "machine_durations": {
+            "MP091": 2500,
+            "MP090": 2500
+          }
+        },
+        {
+          "sequence": 7,
+          "operation": "Tahrik Burcu Kama Yeri Açma",
+          "setup_group": "30",
+          "machine_durations": {
+            "MP092": 500
+          }
+        }
+      ]
+    },
+    {
+      "unit_id": "MOCK-F6FC",
+      "order_job_id": "JOB-20-9",
+      "alternator_code": "2.01.10.0001",
+      "model": "40V1.1",
+      "series": "40",
+      "priority": "Yüksek",
+      "priority_weight": 3,
+      "release": 702000,
+      "due": 1836000,
+      "source_excel_row": 30,
+      "ready_date": "2026-07-21",
+      "planned_production_start": "2026-07-13",
+      "planned_ship_date": "2026-08-18",
+      "model_due_date": "2026-08-18",
+      "project": "7563 PTO Alternatör",
+      "stock_confirmation_status": "Stok yok / imalat",
+      "operations": [
+        {
+          "sequence": 1,
+          "operation": "Adaptör İşleme",
+          "setup_group": "40",
+          "machine_durations": {
+            "MP091": 2500,
+            "MP090": 2500
+          }
+        },
+        {
+          "sequence": 2,
+          "operation": "Arka Kapak İşleme",
+          "setup_group": "40",
+          "machine_durations": {
+            "MP091": 6000,
+            "MP090": 6000
+          }
+        },
+        {
+          "sequence": 3,
+          "operation": "Gövde İşleme",
+          "setup_group": "40",
+          "machine_durations": {
+            "MP101": 4500
+          }
+        },
+        {
+          "sequence": 4,
+          "operation": "Mil İşleme",
+          "setup_group": "40",
+          "machine_durations": {
+            "MP091": 13400,
+            "MP090": 13400
+          }
+        },
+        {
+          "sequence": 5,
+          "operation": "İkaz Statoru İşleme",
+          "setup_group": "40",
+          "machine_durations": {
+            "MP091": 500,
+            "MP090": 500
+          }
+        },
+        {
+          "sequence": 6,
+          "operation": "Fan İşleme",
+          "setup_group": "40",
+          "machine_durations": {
+            "MP091": 1000,
+            "MP090": 1000
+          }
+        },
+        {
+          "sequence": 7,
+          "operation": "Fan Kama Yeri Açma",
+          "setup_group": "40",
+          "machine_durations": {
+            "MP092": 500
+          }
+        },
+        {
+          "sequence": 8,
+          "operation": "Tahrik Burcu İşleme",
+          "setup_group": "40",
+          "machine_durations": {
+            "MP091": 2500,
+            "MP090": 2500
+          }
+        },
+        {
+          "sequence": 9,
+          "operation": "Tahrik Burcu Kama Yeri Açma",
+          "setup_group": "40",
+          "machine_durations": {
+            "MP092": 500
+          }
+        }
+      ]
+    }
+  ]
+}
